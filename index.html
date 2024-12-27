@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ártemis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffe4e1; color: #333; }
+        h1 { text-align: center; color: magenta; }
+        .botao { display: inline-block; padding: 10px 20px; background: magenta; color: white; text-decoration: none; border-radius: 5px; margin: 10px; }
+        .relato { margin: 20px; padding: 10px; border: 1px solid #ccc; background: white; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Ártemis - Apoio e Empoderamento</h1>
+    <a href="/novo-relato/" class="botao">Escrever Relato</a>
+    <a href="/disque-denuncia/" class="botao">Disque Denúncia</a>
+    <hr>
+    {% for relato in relatos %}
+    <div class="relato">
+        <h2>{{ relato.titulo }}</h2>
+        <p>{{ relato.conteudo }}</p>
+        <small>Por {{ relato.autor.username }} em {{ relato.criado_em }}</small>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Relato - Ártemis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #ffe4e1; color: #333; }
+        form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+        input, textarea, button { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: magenta; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Escrever Novo Relato</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="titulo" placeholder="Título" required>
+        <textarea name="conteudo" placeholder="Conteúdo" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
